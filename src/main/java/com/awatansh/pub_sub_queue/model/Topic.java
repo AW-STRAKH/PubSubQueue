@@ -1,4 +1,4 @@
-package com.uditagarwal.pub_sub_queue.model;
+package com.awatansh.pub_sub_queue.model;
 
 import lombok.Getter;
 import lombok.NonNull;

@@ -1,8 +1,8 @@
-package com.uditagarwal;
+package com.awatansh;
 
-import com.uditagarwal.pub_sub_queue.public_interface.Queue;
-import com.uditagarwal.pub_sub_queue.model.Message;
-import com.uditagarwal.pub_sub_queue.model.Topic;
+import com.awatansh.pub_sub_queue.public_interface.Queue;
+import com.awatansh.pub_sub_queue.model.Message;
+import com.awatansh.pub_sub_queue.model.Topic;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -16,7 +16,7 @@ public class Main {
 
         final SleepingSubscriber sub3 = new SleepingSubscriber("sub3", 5000);
         queue.subscribe(sub3, topic2);
-
+// each subscriber in a  separate thread only hence message will be processed sequentially for diff messages
         queue.publish(topic1, new Message("m1"));
         queue.publish(topic1, new Message("m2"));
 

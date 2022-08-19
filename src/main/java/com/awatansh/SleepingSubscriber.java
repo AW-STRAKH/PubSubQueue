@@ -1,7 +1,7 @@
-package com.uditagarwal;
+package com.awatansh;
 
-import com.uditagarwal.pub_sub_queue.public_interface.ISubscriber;
-import com.uditagarwal.pub_sub_queue.model.Message;
+import com.awatansh.pub_sub_queue.public_interface.ISubscriber;
+import com.awatansh.pub_sub_queue.model.Message;
 
 public class SleepingSubscriber implements ISubscriber {
     private final String id;

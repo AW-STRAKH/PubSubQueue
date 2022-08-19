@@ -1,8 +1,8 @@
-package com.uditagarwal.pub_sub_queue.handler;
+package com.awatansh.pub_sub_queue.handler;
 
-import com.uditagarwal.pub_sub_queue.model.Message;
-import com.uditagarwal.pub_sub_queue.model.Topic;
-import com.uditagarwal.pub_sub_queue.model.TopicSubscriber;
+import com.awatansh.pub_sub_queue.model.Message;
+import com.awatansh.pub_sub_queue.model.Topic;
+import com.awatansh.pub_sub_queue.model.TopicSubscriber;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.SneakyThrows;
@@ -24,6 +24,7 @@ public class SubscriberWorker implements Runnable {
         synchronized (topicSubscriber) {
             do {
                 int curOffset = topicSubscriber.getOffset().get();
+                //CHECK IF THERE ARE NEW MESSAGES OR NOT
                 while (curOffset >= topic.getMessages().size()) {
                     topicSubscriber.wait();
                 }
